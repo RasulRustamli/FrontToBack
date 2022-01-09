@@ -1,5 +1,45 @@
 $(document).ready(function () {
 
+    //load more
+    let count = $("#count").val();
+    let skip = 8;
+    $(document).on("click", "#loadMore", function () {
+        $.ajax({
+            url: "/product/Loadmore?skip=" + skip,
+            method:"get",
+            success: function (res) {
+                //for (var item of res) {
+                //   console.log(item)
+                //    let divimg = $("<div>").addClass("img");
+                //    let link = $("<a>");
+                //   let img = $("<img>").addClass("img-fluid").attr("src", "/img/" + item.imageUrl)
+                //    link.append(img);
+                //    divimg.append(link);
+
+                //    let divtitle = $("<div>").addClass("title mt-3");
+                //    let h6 = $("<h6>").text(item.name);
+                //    divtitle.append(h6)
+                //    let divprice = $("<div>").addClass("price");
+                //    let spanaddcart = $("<span>").addClass("text-black-50").text("Add to cart")
+                //    let spanprice = $("<span>").addClass("text-black-50").text(item.price)
+                //    divprice.append(spanaddcart,spanprice)
+
+                //    let divproduct = $("<div>").addClass("product-item text-center").attr("data-id", "lorem");
+                //    divproduct.append(divimg, divtitle, divprice);
+                //    let divcol = $("<div>").addClass("col-sm-6 col-md-4 col-lg-3 mt-3")
+                //    divcol.append(divproduct);   
+                //    $("#productrow").append(divcol);
+                   
+                //}0
+            }
+        })
+        skip += 8;
+        if (skip >= count) {
+            $("#loadMore").remove();
+        }
+    });
+   
+
     // HEADER
 
     $(document).on('click', '#search', function () {

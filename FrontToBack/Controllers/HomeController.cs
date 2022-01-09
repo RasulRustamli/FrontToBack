@@ -22,7 +22,7 @@ namespace FrontToBack.Controllers
             List<Slider> sliders = _context.Sliders.ToList();
             SliderDesc sliderDesc = _context.SliderDescs.FirstOrDefault();
             List<Category> categories = _context.Categories.ToList();
-            List<Product> products = _context.Products.Include(x=>x.Category).ToList();
+            List<Product> products = _context.Products.Include(x=>x.Category).Take(8).ToList();
             About about = _context.Abouts.FirstOrDefault();
             List<Expert> experts = _context.Experts.ToList();
             List<Blogs> blogs = _context.Blogs.ToList();
