@@ -22,6 +22,12 @@ namespace FrontToBack.DAL
         public DbSet<Blogs> Blogs { get; set; }
         public DbSet<BlogsSlider> BlogsSliders { get; set; }
         public DbSet<InstagramSlider> InstagramSliders { get; set; }
+        public DbSet<Bio> Bios { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<State> States { get; set; }
+
+
+
 
     }
 }

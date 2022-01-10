@@ -11,6 +11,8 @@
     <Compile Remove="Migrations\20220106165225_addExpertTable.Designer.cs" />
     <Compile Remove="Migrations\20220106195011_BlogSlider.cs" />
     <Compile Remove="Migrations\20220106195011_BlogSlider.Designer.cs" />
+    <Compile Remove="Migrations\20220110190149_addModelBrandTables.cs" />
+    <Compile Remove="Migrations\20220110190149_addModelBrandTables.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

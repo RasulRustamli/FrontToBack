@@ -1,4 +1,49 @@
+
+//dropdownlist
 $(document).ready(function () {
+
+    $("#CountryId").change(function () {
+
+        var countryId = $(this).val();
+        debugger
+        $.ajax({
+
+            type: "Post",
+            url: "/Test/GetStateList?CountryId=" + countryId,
+            contentType: "html",
+            success: function (response) {
+                debugger
+                $("#StateId").empty();
+                $("#StateId").append(response);
+
+            }
+
+        })
+
+    })
+
+})
+$(document).ready(function () {
+    
+ 
+
+    //search
+    $(document).on("keyup", "#input-search", function () {
+        let search = $("#input-search").val().trim();
+        $("#search-list li").slice(1).remove();
+        if (search.length > 0) {
+            $.ajax({
+                url: "/product/search?search=" + search,
+                type: "get",
+                success: function (res) {
+                    $("#search-list").append(res);
+                }
+            })
+        }
+    })
+    
+
+
 
     //load more
     let count = $("#count").val();
@@ -28,7 +73,7 @@ $(document).ready(function () {
                 //    divproduct.append(divimg, divtitle, divprice);
                 //    let divcol = $("<div>").addClass("col-sm-6 col-md-4 col-lg-3 mt-3")
                 //    divcol.append(divproduct);   
-                //    $("#productrow").append(divcol);
+                $("#productrow").append(res);
                    
                 //}0
             }

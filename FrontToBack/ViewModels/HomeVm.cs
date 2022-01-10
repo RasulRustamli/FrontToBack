@@ -11,12 +11,13 @@ namespace FrontToBack.ViewModels
         public IEnumerable<Slider> Sliders { get; set; }
         public SliderDesc SliderDesc { get; set; }
         public IEnumerable<Category> Categories { get; set; }
-        public IEnumerable<Product> Products { get; set; }
         public About About { get; set; }
         public IEnumerable<Expert> Experts { get; set; }
         public IEnumerable<Blogs> Blogs { get; set; }
         public IEnumerable<BlogsSlider> BlogsSliders { get; set; }
         public IEnumerable<InstagramSlider> InstagramSliders { get; set; }
+        public Country Country { get; set; }
+        public State State{ get; set; }
 
 
 

@@ -1,0 +1,21 @@
+﻿@model HomeVm
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<div class="panel panel-body" style="min-height:256px">
+    <div class="col-md-9">
+
+        @if (ViewBag.CountryList != null)
+        {
+           @Html.DropDownListFor(m=>m.Country.Id ,ViewBag.CountryList as SelectList, "-- Select Country--", new { @class = "form-control" })
+
+        }
+        @Html.DropDownListFor(m => m.State.Id, new SelectList(""), "--Select State--", new { @class = "form-control" })
+
+
+    </div>
+
+</div>
+
